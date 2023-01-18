@@ -1,0 +1,253 @@
+<html lang="ru"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="author" content="Andrei Solntsev">
+  <meta name="description" content="Selenide: лаконичные и стабильные UI тесты на Java">
+  <meta name="keywords" content="Selenide, Selenium, WebDriver, Test automation, ATDD, concise UI tests, Селенид, Селениум, вебдрайвер, автоматизация тестирования, автотесты, ТДД, АТДД, лаконичные тесты">
+
+  <title>Selenide: лаконичные и стабильные UI тесты на Java</title>
+  
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/assets/themes/ingmar/css/magnific-popup.css?001">
+  <link rel="stylesheet" href="/assets/themes/ingmar/css/pygment_trac.css?002">
+  <link rel="stylesheet" href="/assets/themes/ingmar/css/styles.css?005">
+  <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="/rss.xml">
+
+  <script type="text/javascript" async="" src="https://www.google-analytics.com/plugins/ga/inpage_linkid.js" id="undefined"></script><script type="text/javascript" async="" src="https://ssl.google-analytics.com/ga.js"></script><script src="/assets/themes/ingmar/js/scale.fix.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.1/jquery-ui.min.js"></script>
+  <script src="/assets/themes/ingmar/js/jquery.magnific-popup.min.js"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  
+
+
+  <script type="text/javascript">
+  var _gaq = _gaq || [];
+  var pluginUrl = '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+  _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+  _gaq.push(['_setAccount', 'UA-39031927-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+<script charset="utf-8" src="https://platform.twitter.com/js/horizon_timeline.9d5b85fd7c7c444c478e0efc3fe78f5c.js"></script></head>
+<body>
+  <h1 style="display: none">Selenide: лаконичные и стабильные UI тесты на Java</h1>
+  <div class="head">
+  <div class="wrapper">
+    <header>
+
+      <a id="selenide-logo" href="/index.html">
+        <img src="/images/selenide-logo-big.png" alt="Selenide logo">
+      </a>
+
+      
+
+      <div class="main-menu">
+  
+  <div class="service-links">
+    <div id="languages">
+      <a id="lang_eng" href="https://selenide.org/">EN</a>
+      <a id="lang_rus" href="https://ru.selenide.org/">RU</a>
+    </div>
+  </div>
+  
+  <div class="main-menu-pages">
+    <a href="/quick-start.html">С чего начать?</a>
+    <a href="/documentation.html">Док</a>
+    <a href="/faq.html">ЧАВО</a>
+    <a href="/blog.html">Блог</a>
+    <a href="/javadoc.html">Javadoc</a>
+    <a href="/users.html">Пользователи</a>
+    <a href="/quotes.html">Отзывы</a>
+    <a style="display:none;" href="/thanks.html">Мы говорим спасибо</a>
+  </div>
+
+  
+    <div class="news">
+      <div class="news-line news-title" style="display: block;"><a href="/2023/01/03/selenide-6.11.0/">Вышла Selenide 6.11.0</a></div>
+      <div class="news-line news-link" style="display: block;">Итоги 2022 года</div>
+    </div>
+  
+
+</div>
+
+    </header>
+    </div>
+  </div>
+
+  <div class="main">
+    <section>
+      
+<div class="short donate_header">
+  <div class="wrapper-color-content">
+    <h1 style="color: white; font-weight: bold; font-size: 200%;">Селенид поддерживает Украину 🇺🇦</h1>
+
+    <div>
+      <a class="link" href="https://crisisrelief.un.org/t/ukraine">
+        💛 Гуманитарный фонд ООН
+      </a>
+      <a class="link" href="https://mariupolisobrad.ee/">
+        💛 Друзья Мариуполя
+      </a>
+      <a class="link" href="https://savelife.in.ua/en/donate/">
+        🔥 Фонд поддержки украинской армии
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="short wiki">
+<div class="wrapper-color-content">
+
+  <h3>Что такое Selenide?</h3>
+  <h4>Selenide - это фреймворк для автоматизированного тестирования веб-приложений на основе <a href="https://docs.seleniumhq.org/projects/webdriver/" target="_blank">Selenium WebDriver</a>, дающий следующие преимущества:</h4>
+  <div class="highlights">
+    <a href="/documentation.html">Изящный API</a>
+    <span>Стабильные тесты</span>
+    <span>Мощные селекторы</span>
+    <span>Простая конфигурация</span>
+  </div>
+  <div class="mt-1">
+    Вам больше не нужно заботиться о том, как закрыть браузер, обработать таймауты и StaleElement Exceptions 
+    или искать соответствующую строку в логах, отлаживая свои тесты.
+  </div>
+
+  <div class="mt-1">
+    <b> Просто сконцентрируйтесь на бизнес-логике и позвольте Selenide сделать все остальное</b>!
+  </div>
+
+  <a href="/quick-start.html">
+    <img style="margin-top: 15px; margin-bottom: -33px" src="/images/arrow-down.png" width="30" height="55" alt="" border="0">
+  </a>
+</div>
+</div>
+
+<div class="quicklinks">
+  <div class="wrapper-color-content">
+    <ul class="gray-boxes">
+      <li><a href="https://github.com/selenide/selenide" target="_blank"><span class="ql"><h3>View on</h3> <strong><h4>GitHub</h4></strong></span></a></li>
+      <li><a href="https://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22com.codeborne%22%20AND%20a%3A%22selenide%22" target="_blank"><span class="ql"><h3>Search in</h3> <strong><h4>Maven</h4></strong></span></a></li>
+      <li><a href="/blog.html"><span class="ql"><h3>Read our</h3> <strong><h4>Blog</h4></strong></span></a></li>
+      <li><a href="https://twitter.com/selenide" target="_blank"><span class="ql"><h3>Follow at</h3><strong><h4>Twitter</h4></strong></span></a></li>
+      <li><a href="/rss"><span class="ql"><h3>Subscribe to</h3><strong><h4>RSS</h4></strong></span></a></li>
+    </ul>
+  </div>
+</div>
+
+<div class="short howto">
+  <div class="wrapper-color-content">
+  
+    <h3>С чего начать?</h3>
+    <h4>Начать использовать Selenide невероятно просто.</h4>
+  
+    <div>  
+      Просто добавьте <a href="https://search.maven.org/remotecontent?filepath=com/codeborne/selenide/6.11.0/selenide-6.11.0.jar">selenide.jar</a> в ваш проект. И начинайте писать тесты!
+    </div>
+    
+    <a href="/quick-start.html">
+      <img style="margin-top: 15px; margin-bottom: -33px" src="/images/arrow-down.png" width="30" height="55" border="0">
+    </a>
+  </div>
+</div>
+
+<div class="short docs">
+  <div class="wrapper-color-content">
+
+    <h3>Документация</h3>
+    <h4>
+      Плохой софт <span class="bold">не имеет</span> документации.
+      Отличный софт <span class="bold">не нуждается</span> в документации.
+    </h4>
+    
+    <div>
+      Мы с гордостью заявляем, что Selenide настолько прост, что вам не нужно читать тонны документации, чтобы начать с ним работать.
+    </div>
+    <div class="mt-1">
+      Вся работа с Selenide состоит всего из трёх простых вещей.
+    </div>
+    <a href="/documentation.html">
+      <img style="margin-top: 15px; margin-bottom: -33px" src="/images/arrow-down.png" width="30" height="55" border="0">
+    </a>
+
+  </div>
+</div>
+
+<div class="short feedback">
+  <div class="wrapper-color-content">
+  
+    <h3>Контакты</h3>
+    <h4>Ты хочешь поговорить об этом?</h4>
+  
+    <div>Где можно задать вопрос или обсудить любой вопрос насчёт Selenide на русском языке:</div>
+    <div class="highlights">
+      <a href="mailto:selenide-ru@googlegroups.com">Гуглогруппа</a>
+      <a href="http://automated-testing.info/c/webdriver/selenide">раздел Selenide на automated-testing.info</a>
+      <a href="mailto:info@selenide.org">Email</a>
+    </div>
+  
+  </div>
+</div>
+
+<div class="short testimonials">
+  <div class="wrapper-color-content">
+  
+    <h3>Отзывы</h3>
+    <h4>"Selenide - мощный инструмент для написания функциональных тестов. Рекомендую."</h4>
+    
+    <div>KAUR MÄTAS,</div>
+    <div>Инженер LiveRebel в ZeroTurnaround</div>
+    
+    <a href="/users.html">
+      <img style="margin-top: 15px; margin-bottom: -33px" src="/images/arrow-down.png" width="30" height="55" border="0">
+    </a>
+  </div>
+</div>
+
+<div class="wrapper-content center" style="padding-top: 25px;">
+  <div class="twitter-timeline twitter-timeline-rendered" style="display: flex; max-width: 100%; margin-top: 0px; margin-bottom: 0px;"><iframe id="twitter-widget-0" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" class="" style="position: static; visibility: visible; width: 776px; height: 6741px; display: block; flex-grow: 1;" title="Twitter Timeline" src="https://syndication.twitter.com/srv/timeline-profile/screen-name/selenide?dnt=false&amp;embedId=twitter-widget-0&amp;features=eyJ0ZndfdGltZWxpbmVfbGlzdCI6eyJidWNrZXQiOlsibGlua3RyLmVlIiwidHIuZWUiLCJ0ZXJyYS5jb20uYnIiLCJ3d3cubGlua3RyLmVlIiwid3d3LnRyLmVlIiwid3d3LnRlcnJhLmNvbS5iciJdLCJ2ZXJzaW9uIjpudWxsfSwidGZ3X2ZvbGxvd2VyX2NvdW50X3N1bnNldCI6eyJidWNrZXQiOnRydWUsInZlcnNpb24iOm51bGx9LCJ0ZndfaG9yaXpvbl90aW1lbGluZV8xMjAzNCI6eyJidWNrZXQiOiJ0cmVhdG1lbnQiLCJ2ZXJzaW9uIjpudWxsfSwidGZ3X3R3ZWV0X2VkaXRfYmFja2VuZCI6eyJidWNrZXQiOiJvbiIsInZlcnNpb24iOm51bGx9LCJ0ZndfcmVmc3JjX3Nlc3Npb24iOnsiYnVja2V0Ijoib24iLCJ2ZXJzaW9uIjpudWxsfSwidGZ3X3Nob3dfYnVzaW5lc3NfdmVyaWZpZWRfYmFkZ2UiOnsiYnVja2V0Ijoib24iLCJ2ZXJzaW9uIjpudWxsfSwidGZ3X2NoaW5fcGlsbHNfMTQ3NDEiOnsiYnVja2V0IjoiY29sb3JfaWNvbnMiLCJ2ZXJzaW9uIjpudWxsfSwidGZ3X3R3ZWV0X3Jlc3VsdF9taWdyYXRpb25fMTM5NzkiOnsiYnVja2V0IjoidHdlZXRfcmVzdWx0IiwidmVyc2lvbiI6bnVsbH0sInRmd19taXhlZF9tZWRpYV8xNTg5NyI6eyJidWNrZXQiOiJ0cmVhdG1lbnQiLCJ2ZXJzaW9uIjpudWxsfSwidGZ3X3NlbnNpdGl2ZV9tZWRpYV9pbnRlcnN0aXRpYWxfMTM5NjMiOnsiYnVja2V0IjoiaW50ZXJzdGl0aWFsIiwidmVyc2lvbiI6bnVsbH0sInRmd19leHBlcmltZW50c19jb29raWVfZXhwaXJhdGlvbiI6eyJidWNrZXQiOjEyMDk2MDAsInZlcnNpb24iOm51bGx9LCJ0ZndfZHVwbGljYXRlX3NjcmliZXNfdG9fc2V0dGluZ3MiOnsiYnVja2V0Ijoib24iLCJ2ZXJzaW9uIjpudWxsfSwidGZ3X3ZpZGVvX2hsc19keW5hbWljX21hbmlmZXN0c18xNTA4MiI6eyJidWNrZXQiOiJ0cnVlX2JpdHJhdGUiLCJ2ZXJzaW9uIjpudWxsfSwidGZ3X3Nob3dfYmx1ZV92ZXJpZmllZF9iYWRnZSI6eyJidWNrZXQiOiJvbiIsInZlcnNpb24iOm51bGx9LCJ0ZndfbGVnYWN5X3RpbWVsaW5lX3N1bnNldCI6eyJidWNrZXQiOnRydWUsInZlcnNpb24iOm51bGx9LCJ0Zndfc2hvd19nb3ZfdmVyaWZpZWRfYmFkZ2UiOnsiYnVja2V0Ijoib24iLCJ2ZXJzaW9uIjpudWxsfSwidGZ3X3Nob3dfYnVzaW5lc3NfYWZmaWxpYXRlX2JhZGdlIjp7ImJ1Y2tldCI6Im9uIiwidmVyc2lvbiI6bnVsbH0sInRmd190d2VldF9lZGl0X2Zyb250ZW5kIjp7ImJ1Y2tldCI6Im9uIiwidmVyc2lvbiI6bnVsbH19&amp;frame=false&amp;hideBorder=false&amp;hideFooter=false&amp;hideHeader=false&amp;hideScrollBar=false&amp;lang=ru&amp;origin=https%3A%2F%2Fru.selenide.org%2F&amp;sessionId=bdbcb1207dd53c175433ac0329d8a2a074c353de&amp;showHeader=true&amp;showReplies=false&amp;transparent=false&amp;widgetsVersion=2b959255e8896%3A1673658205745"></iframe></div>
+  <script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div>
+
+<p><a name="thanks"></a></p>
+<div class="short thanks">
+  <h4>Большое спасибо:</h4>
+  <a href="https://www.jetbrains.com/?from=selenide.org" target="_blank">
+    <img src="/images/jetbrains.svg" alt="JetBrains. Intellij IDEA - лучшая IDE для Java на Млечном Пути!">
+  </a>
+  <a href="https://www.browserstack.com" target="_blank">
+    <img src="https://www.browserstack.com/images/mail/browserstack-logo-footer.png" alt="BrowserStack">
+  </a>
+  <a href="http://www.seleniumhq.org/" target="_blank">
+    <img src="/images/selenium-logo.png" alt="Selenium WebDriver">
+  </a>
+</div>
+
+    </section>
+  </div>
+
+  <div class="foot">
+    <div class="wrapper">
+      <footer>
+        <p>
+        </p><div>The project is maintained by</div>
+        <a href="https://github.com/codeborne">
+          <img src="/images/codeborne-logo.png" width="300" height="49"></a>
+        <p></p>
+      </footer>
+    </div>
+  </div>
+
+  <script src="/assets/themes/ingmar/js/selenide.org.js"></script>
+
+
+<iframe scrolling="no" frameborder="0" allowtransparency="true" src="https://platform.twitter.com/widgets/widget_iframe.3da3731af9a8a2b242ed5500485bb22f.html?origin=https%3A%2F%2Fru.selenide.org" title="Twitter settings iframe" style="display: none;"></iframe><iframe id="rufous-sandbox" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" style="position: absolute; visibility: hidden; display: none; width: 0px; height: 0px; padding: 0px; border: none;" title="Twitter analytics iframe"></iframe></body></html>
